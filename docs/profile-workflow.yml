@@ -1,0 +1,23 @@
+# 复制到你的主页仓库（<你的ID>/<你的ID>）：.github/workflows/mcd-card.yml
+# 并在仓库 Settings → Secrets and variables → Actions 中新建 MCD_MCP_TOKEN
+name: McReadme Card
+
+on:
+  schedule:
+    - cron: '17 1 * * *' # 每天北京时间 09:17 刷新
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  card:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: colorfulee/McReadme-Card@main
+        with:
+          mcd_token: ${{ secrets.MCD_MCP_TOKEN }}
+          theme: receipt,neofetch,native
+          # privacy: strict          # 不想公开积分/券数量时打开
+          # hide: channel,campaign   # 按需隐藏模块

@@ -1,0 +1,73 @@
+name: McReadme Card
+description: 麦门名片：把你的麦当劳履历渲染成 GitHub 主页 SVG 卡片（数据来自麦当劳 MCP，只读）
+author: colorfulee
+branding:
+  icon: award
+  color: red
+
+inputs:
+  mcd_token:
+    description: 麦当劳 MCP Token（请放在仓库 Secrets 里，例如 secrets.MCD_MCP_TOKEN）
+    required: true
+  github_user:
+    description: 卡片上显示的 GitHub ID
+    default: ${{ github.repository_owner }}
+  theme:
+    description: 主题，可逗号分隔生成多张：receipt | neofetch | native
+    default: receipt
+  output:
+    description: 输出路径；多主题时自动加后缀（mcd-card-receipt.svg …）
+    default: mcd-card.svg
+  history:
+    description: 订单历史累积文件；填 off 关闭
+    default: .mcd-card/history.json
+  hide:
+    description: 隐藏模块，逗号分隔：points,coupons,campaign,graph,stack,channel,maindep
+    default: ''
+  privacy:
+    description: normal | strict（strict 隐藏积分与优惠券数字）
+    default: normal
+  commit:
+    description: 是否自动提交生成结果
+    default: 'true'
+  commit_message:
+    description: 提交信息
+    default: 'chore: refresh McReadme Card'
+
+runs:
+  using: composite
+  steps:
+    - name: Render card
+      shell: bash
+      env:
+        MCD_MCP_TOKEN: ${{ inputs.mcd_token }}
+        IN_USER: ${{ inputs.github_user }}
+        IN_THEME: ${{ inputs.theme }}
+        IN_OUTPUT: ${{ inputs.output }}
+        IN_HISTORY: ${{ inputs.history }}
+        IN_HIDE: ${{ inputs.hide }}
+        IN_PRIVACY: ${{ inputs.privacy }}
+      run: |
+        node "${{ github.action_path }}/src/cli.js" \
+          --user "$IN_USER" --theme "$IN_THEME" --out "$IN_OUTPUT" \
+          --history "$IN_HISTORY" --hide "$IN_HIDE" --privacy "$IN_PRIVACY"
+
+    - name: Commit card
+      if: inputs.commit == 'true'
+      shell: bash
+      env:
+        IN_OUTPUT: ${{ inputs.output }}
+        IN_HISTORY: ${{ inputs.history }}
+        IN_MSG: ${{ inputs.commit_message }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        base="${IN_OUTPUT%.*}"
+        shopt -s nullglob
+        files=("$IN_OUTPUT" "$base"-*.svg)
+        [ "$IN_HISTORY" != "off" ] && [ -f "$IN_HISTORY" ] && files+=("$IN_HISTORY")
+        existing=()
+        for f in "${files[@]}"; do [ -f "$f" ] && existing+=("$f"); done
+        [ ${#existing[@]} -eq 0 ] && { echo "nothing to commit"; exit 0; }
+        git add -f -- "${existing[@]}"
+        if git diff --cached --quiet; then echo "card unchanged"; else git commit -m "$IN_MSG" && git push; fi

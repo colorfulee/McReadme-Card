@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="276" viewBox="0 0 495 276" role="img" aria-label="麦门名片 McReadme Card">
+<title>麦门名片 McReadme Card</title>
+<style>
+text{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', Helvetica, Arial, sans-serif}
+.emo{font-family:'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', 'Twemoji Mozilla', sans-serif}.locked{filter:grayscale(1);opacity:.28}
+.bg{fill:#FFFEFE;stroke:#E4E2E2}
+.title{fill:#C8102E}.label{fill:#434D58}.value{fill:#24292F}.mute{fill:#6A737D}
+.fade{animation:fadeIn .5s ease-in-out backwards}
+@keyframes fadeIn{from{opacity:0}}
+@media (prefers-color-scheme: dark){
+.bg{fill:#0D1117;stroke:#30363D}
+.title{fill:#FF7B72}.label{fill:#C9D1D9}.value{fill:#F0F6FC}.mute{fill:#8B949E}
+}
+</style>
+<rect x="0.5" y="0.5" rx="4.5" width="494" height="275" class="bg"/>
+<text x="25" y="36" font-size="18" font-weight="600" class="title">@mcd-dev 的麦门名片</text>
+<g class="fade" style="animation-delay:150ms">
+<circle cx="31" cy="65" r="5" fill="#DA291C"/>
+<text x="45" y="70" font-size="14" class="label">主力依赖</text>
+<text x="300" y="70" font-size="14" font-weight="700" text-anchor="end" class="value">麦辣鸡腿堡 ×15</text>
+</g>
+<g class="fade" style="animation-delay:270ms">
+<circle cx="31" cy="90" r="5" fill="#FFBC0D"/>
+<text x="45" y="95" font-size="14" class="label">探索单品</text>
+<text x="300" y="95" font-size="14" font-weight="700" text-anchor="end" class="value">18 款 · 6 类</text>
+</g>
+<g class="fade" style="animation-delay:390ms">
+<circle cx="31" cy="115" r="5" fill="#2D9CDB"/>
+<text x="45" y="120" font-size="14" class="label">发版时段</text>
+<text x="300" y="120" font-size="14" font-weight="700" text-anchor="end" class="value">午间发版</text>
+</g>
+<g class="fade" style="animation-delay:510ms">
+<circle cx="31" cy="140" r="5" fill="#F2994A"/>
+<text x="45" y="145" font-size="14" class="label">可用积分</text>
+<text x="300" y="145" font-size="14" font-weight="700" text-anchor="end" class="value">1,024</text>
+</g>
+<g class="fade" style="animation-delay:630ms">
+<circle cx="31" cy="165" r="5" fill="#8B5E3C"/>
+<text x="45" y="170" font-size="14" class="label">可用优惠券</text>
+<text x="300" y="170" font-size="14" font-weight="700" text-anchor="end" class="value">5 张</text>
+</g>
+<circle cx="410" cy="98" r="40" fill="#E8590C" fill-opacity="0.08" stroke="#E8590C" stroke-opacity="0.2" stroke-width="6"/>
+<circle cx="410" cy="98" r="40" fill="none" stroke="#E8590C" stroke-width="6" stroke-linecap="round" stroke-dasharray="37.7 251.33" transform="rotate(-90 410 98)"/>
+<text x="410" y="104" font-size="30" text-anchor="middle" class="emo">🏆</text>
+<text x="410" y="124" font-size="12" font-weight="800" fill="#E8590C" text-anchor="middle" letter-spacing="1">L5</text>
+<text x="410" y="160" font-size="12.5" font-weight="700" fill="#E8590C" text-anchor="middle">资深麦门专家</text>
+<text x="410" y="179" font-size="13" text-anchor="middle" class="emo" letter-spacing="1">🍟🍔🥤🍦☕</text>
+<text x="410" y="196" font-size="10.5" text-anchor="middle" class="mute">距 👑 L6 还差 34 XP</text>
+<text x="25" y="210" font-size="12" font-weight="600" class="label">麦门技术栈</text>
+<clipPath id="nt-stack"><rect x="25" y="220" width="445" height="8" rx="4"/></clipPath><g clip-path="url(#nt-stack)"><rect x="25" y="220" width="136.31" height="8" fill="#FFBC0D"/><rect x="161.31" y="220" width="124.28" height="8" fill="#DA291C"/><rect x="285.59" y="220" width="104.23" height="8" fill="#2D9CDB"/><rect x="389.82" y="220" width="36.08" height="8" fill="#8B5E3C"/><rect x="425.9" y="220" width="44.1" height="8" fill="#9AA0A6"/></g>
+<circle cx="29" cy="241.98" r="4" fill="#FFBC0D"/><text x="37" y="246" font-size="11.5" class="label" >小食 <tspan >31%</tspan></text><circle cx="103.3" cy="241.98" r="4" fill="#DA291C"/><text x="111.3" y="246" font-size="11.5" class="label" >汉堡 <tspan >28%</tspan></text><circle cx="177.6" cy="241.98" r="4" fill="#2D9CDB"/><text x="185.6" y="246" font-size="11.5" class="label" >饮品 <tspan >23%</tspan></text><circle cx="251.9" cy="241.98" r="4" fill="#8B5E3C"/><text x="259.9" y="246" font-size="11.5" class="label" >咖啡 <tspan >8.1%</tspan></text><circle cx="332.53" cy="241.98" r="4" fill="#9AA0A6"/><text x="340.53" y="246" font-size="11.5" class="label" >其他 <tspan >9.9%</tspan></text>
+<text x="470" y="262" font-size="9.5" text-anchor="end" class="mute">数据源 麦当劳 MCP · 粉丝自制，非官方</text>
+</svg>

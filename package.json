@@ -1,0 +1,15 @@
+{
+  "name": "mcreadme-card",
+  "version": "1.0.0",
+  "description": "麦门名片：把你的麦当劳履历渲染成 GitHub 主页 SVG 卡片（数据来自麦当劳 MCP）",
+  "type": "module",
+  "bin": { "mcreadme-card": "src/cli.js" },
+  "scripts": {
+    "demo": "node src/cli.js --demo --user mcd-dev --theme receipt,neofetch,native --out examples/card.svg",
+    "card": "node src/cli.js --theme receipt",
+    "test": "node --test test/card.test.js"
+  },
+  "engines": { "node": ">=18" },
+  "keywords": ["mcp", "mcdonalds", "github-profile", "readme", "svg", "skill"],
+  "license": "MIT"
+}

@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+# 本地调试产物，可能含个人数据，不要提交
+.local/
+bundle*.json
+mcd-card*.svg
+.mcd-card/
+.claude/
